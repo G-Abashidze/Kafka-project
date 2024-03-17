@@ -1,0 +1,68 @@
+
+drop table if exists customers_data;
+create table customers_data (
+	customer_id VARCHAR(100),
+	customer_unique_id VARCHAR(100),
+	customer_zip_code_prefix int,
+	customer_city varchar(100),
+	customer_state varchar(100)
+)
+
+
+drop table if exists product_category_name_translation;
+create table product_category_name_translation (
+	product_category_name_br nvarchar(255),
+	product_category_name_english nvarchar(255)
+)
+
+
+drop table if exists products;
+create table products (
+	product_id varchar(36) primary key,
+	product_category_name varchar(255),
+	product_name_lenght int,
+	product_description_lenght int,
+	product_photos_qty int,
+	product_weight_g int,
+	product_length_cm int,
+	product_height_cm int,
+	product_width_cm int
+)
+
+
+
+
+drop table if exists orders;
+create table orders (
+	order_id					  varchar(100),
+	EventDate					  datetime,
+	customer_id					  varchar(100),
+	order_status				  varchar(100),
+	order_purchase_timestamp	  varchar(100),
+	order_approved_at			  varchar(100),
+	order_delivered_carrier_date  varchar(100),
+	order_delivered_customer_date varchar(100),
+	order_estimated_delivery_date varchar(100)
+)
+
+
+
+drop table if exists order_items;
+create table order_items (
+	order_id varchar(100),
+	order_item_id int,
+	product_id varchar(100),
+	shipping_limit_date varchar(100),
+	price float,
+	freight_value float
+)
+
+
+
+
+
+
+
+
+
+
